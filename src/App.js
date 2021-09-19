@@ -1,24 +1,29 @@
-import logo from './logo.svg';
 import './App.css';
+import Sdbar from './sdbar';
+import Drive from './drive';
+import Folder from './folder';
+import Files from './files';
+import Textfiles from './textfiles'
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from "react-router-dom";
+
 
 function App() {
   return (
+    <Router>
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <Sdbar/>
+      <Switch>
+        <Route path = "/" component={Drive} exact={true}/>
+        <Route path = "/folder" component={Folder} exact={true}/>
+        <Route path = "/files" component={Files} exact={true}/>
+        <Route path = "/textfiles" component={Textfiles} exact={true}/>
+      </Switch>
+      </div>
+    </Router>
   );
 }
 
