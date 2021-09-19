@@ -20,7 +20,7 @@ const Sdbar = () => {
 let handleclick = async () =>
 {
   try {
-    let adddata = await axios.post("http://localhost:3000/create-file", {message : "current date-time"})
+    let adddata = await axios.post("https://boopalannodefilesystem.herokuapp.com/create-file", {message : "current date-time"})
     alert(adddata.data);
   } catch (error) {
     alert(error);

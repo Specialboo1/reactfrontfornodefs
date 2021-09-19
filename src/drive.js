@@ -7,7 +7,7 @@ export default function Drive ()
     const [data,setdata] = useState([]);
     useEffect(async () => {
         try {
-            let getdata = await axios.get("http://localhost:3000");
+            let getdata = await axios.get("https://boopalannodefilesystem.herokuapp.com");
             console.log(getdata)
         setdata([...getdata.data]); 
         } catch (error) {
